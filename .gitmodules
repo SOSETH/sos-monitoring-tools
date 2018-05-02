@@ -1,0 +1,27 @@
+[submodule "check_ib"]
+	path = check_ib
+	url = git@github.com:SOSETH/check_ib.git
+[submodule "check_power"]
+	path = check_power
+	url = git@github.com:SOSETH/check_power.git
+[submodule "check_sas_smart"]
+	path = check_sas_smart
+	url = git@github.com:SOSETH/check_sas_smart.git
+[submodule "check-ceph"]
+	path = check-ceph
+	url = git@github.com:SOSETH/check-ceph.git
+[submodule "check_apcupsd"]
+	path = check_apcupsd
+	url = git@github.com:SOSETH/check_apcupsd.git
+[submodule "check_iostat"]
+	path = check_iostat
+	url = git@github.com:SOSETH/check_iostat.git
+[submodule "check_ipmi_sensor_v3"]
+	path = check_ipmi_sensor_v3
+	url = git@github.com:SOSETH/check_ipmi_sensor_v3.git
+[submodule "check_mem"]
+	path = check_mem
+	url = git@github.com:SOSETH/check_mem.git
+[submodule "check_lm_sensors"]
+	path = check_lm_sensors
+	url = git@github.com:SOSETH/check_lm_sensors.git
