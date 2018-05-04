@@ -4,6 +4,10 @@ if [ ! -d out ] ; then
     mkdir out
 fi
 
+if [ -z "${BUILD_GOLANG_VERSION}" ] ; then
+    export BUILD_GOLANG_VERSION=1.10
+fi
+
 set -e
 
 function buildpkg {
@@ -46,7 +50,7 @@ export GOPATH="$(pwd)/gosrc"
 if [ ! -d gosrc ] ; then
     mkdir gosrc
     # We also need dep since we don't include the vendor dir in GIT
-    go get -u github.com/golang/dep/cmd/dep
+    /usr/lib/go-${BUILD_GOLANG_VERSION}/bin/go get -u github.com/golang/dep/cmd/dep
 fi
 
 export GOPATH=""
