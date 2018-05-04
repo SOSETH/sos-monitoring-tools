@@ -59,5 +59,5 @@ export GOROOT=""
 go version
 
 buildpkg check-ceph_0.1_amd64.deb check-ceph
-
+buildpkg prometheus-graphite-exporter_0.2.0-d950808_amd64.deb graphite_exporter
 # vim: set ts=4 sw=4 tw=0 et :

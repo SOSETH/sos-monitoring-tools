@@ -37,3 +37,6 @@
 [submodule "tcpdup"]
 	path = tcpdup
 	url = git@github.com:SOSETH/tcpdup.git
+[submodule "graphite_exporter"]
+	path = graphite_exporter
+	url = git@github.com:SOSETH/graphite_exporter.git
