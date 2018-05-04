@@ -25,3 +25,12 @@
 [submodule "check_lm_sensors"]
 	path = check_lm_sensors
 	url = git@github.com:SOSETH/check_lm_sensors.git
+[submodule "check_raid"]
+	path = check_raid
+	url = git@github.com:SOSETH/check_raid.git
+[submodule "check_snmp_int"]
+	path = check_snmp_int
+	url = git@github.com:SOSETH/check_snmp_int.git
+[submodule "check_smartvalues"]
+	path = check_smartvalues
+	url = git@github.com:SOSETH/check_smartvalues.git

@@ -1,3 +1,5 @@
 gosrc
 out
 ceph
+*.changes
+*.buildinfo

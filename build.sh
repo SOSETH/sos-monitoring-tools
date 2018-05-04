@@ -33,6 +33,9 @@ buildpkg check-ib_0.1_amd64.deb check_ib
 # Perl
 buildpkg check-ipmi-sensor_3.12-1_all.deb check_ipmi_sensor_v3
 buildpkg check-lm-sensors_4.4.1-36e453f-1_all.deb check_lm_sensors
+buildpkg check-raid_4.0.8-1_all.deb check_raid
+buildpkg check-snmp-int_1.24-1_all.deb check_snmp_int
+buildpkg check-smartvalues_0.4-1.1_all.deb check_smartvalues
 
 # Golang
 # To prevent issues with user-supplied go environments (aka go version != 1.7
