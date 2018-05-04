@@ -28,7 +28,8 @@ RUN apt update && \
     python3-venv \
     cmake \
     libaliased-perl \
-    libmodule-pluggable-perl
+    libmodule-pluggable-perl \
+    libseccomp-dev
 
 RUN echo "deb http://ftp.debian.org/debian stretch-backports main" > /etc/apt/sources.list.d/backports.list && \
   apt update && \

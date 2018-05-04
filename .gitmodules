@@ -34,3 +34,6 @@
 [submodule "check_smartvalues"]
 	path = check_smartvalues
 	url = git@github.com:SOSETH/check_smartvalues.git
+[submodule "tcpdup"]
+	path = tcpdup
+	url = git@github.com:SOSETH/tcpdup.git
