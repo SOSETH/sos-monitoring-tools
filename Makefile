@@ -11,6 +11,5 @@ dist-clean:
 	./srcclean.sh check_lm_sensors
 	./srcclean.sh check_raid
 
-all:
-	jessie
-	stretch
+all:	jessie
+all:	stretch
