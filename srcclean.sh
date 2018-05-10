@@ -11,7 +11,7 @@ fi
 
 for i in $TRG ; do
 	pushd $i
-	if [ -d .git ] ; then
+	if [ -f .git ] ; then
 		git checkout .
 		git clean -fd .
 	fi
