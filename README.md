@@ -3,9 +3,13 @@ Tools and scripts required by SOSETH monitoring roles. This is a work in progres
 not all tools have been packaged yet.
 
 ## Usage
-Install dependencies (TODO: List deps) and do
+You can either manually install all dependencies and do
 ```
-./build.sh
+./build.sh <dist>
 ```
-After a while, you should end up with a bunch of debian packages in out, which
-you can then publish in some repository (or use ours).
+or you can use the docker-based build:
+```
+make all
+```
+After a while, you should end up with a bunch of debian packages in
+out-<version>, which you can then publish in some repository (or use ours).

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+DIST="${1}"
+
 if [ ! -d out ] ; then
     mkdir out
 fi
@@ -33,7 +35,9 @@ buildpkg check-mem_0.1-1_all.deb check_mem
 
 # C++
 buildpkg check-ib_0.1_amd64.deb check_ib
-buildpkg tcpdup_0.1+nmu1_amd64.deb tcpdup
+if [ "${DIST}" != "jessie" ] ; then
+    buildpkg tcpdup_0.1+nmu1_amd64.deb tcpdup
+fi
 
 # Perl
 buildpkg check-ipmi-sensor_3.12-1_all.deb check_ipmi_sensor_v3
@@ -43,21 +47,23 @@ buildpkg check-snmp-int_1.24-1_all.deb check_snmp_int
 buildpkg check-smartvalues_0.4-1.1_all.deb check_smartvalues
 
 # Golang
-# To prevent issues with user-supplied go environments (aka go version != 1.7
-# on strech), we reset the environment to a known, clean state
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+if [ "${DIST}" != "jessie" ] ; then
+    # To prevent issues with user-supplied go environments (aka go version != 1.7
+    # on strech), we reset the environment to a known, clean state
+    export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
-export GOPATH="$(pwd)/gosrc"
-if [ ! -d gosrc ] ; then
-    mkdir gosrc
-    # We also need dep since we don't include the vendor dir in GIT
-    /usr/lib/go-${BUILD_GOLANG_VERSION}/bin/go get -u github.com/golang/dep/cmd/dep
+    export GOPATH="$(pwd)/gosrc"
+    if [ ! -d gosrc ] ; then
+        mkdir gosrc
+        # We also need dep since we don't include the vendor dir in GIT
+        /usr/lib/go-${BUILD_GOLANG_VERSION}/bin/go get -u github.com/golang/dep/cmd/dep
+    fi
+
+    export GOPATH=""
+    export GOROOT=""
+    go version
+
+    buildpkg check-ceph_0.1_amd64.deb check-ceph
+    buildpkg prometheus-graphite-exporter_0.2.0-d950808_amd64.deb graphite_exporter
 fi
-
-export GOPATH=""
-export GOROOT=""
-go version
-
-buildpkg check-ceph_0.1_amd64.deb check-ceph
-buildpkg prometheus-graphite-exporter_0.2.0-d950808_amd64.deb graphite_exporter
 # vim: set ts=4 sw=4 tw=0 et :

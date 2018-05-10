@@ -1,5 +1,6 @@
 FROM uubk/debuild:stretch
 
+ARG LUID=1000
 RUN apt update && \
   apt upgrade -y && \
   apt install -y golang-go \
@@ -37,7 +38,8 @@ RUN echo "deb http://ftp.debian.org/debian stretch-backports main" > /etc/apt/so
 
 COPY . /tmp/wd
 WORKDIR /tmp/wd
-RUN ./build.sh && \
+RUN ./build.sh stretch && \
+  chown -R ${LUID} /tmp/wd/out && \
   tar -C /tmp/wd/out -cvf /pkg.tar . && \
   rm -Rf /tmp/wd
 

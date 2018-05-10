@@ -1,4 +1,5 @@
 gosrc
+out-*
 out
 ceph
 *.changes
