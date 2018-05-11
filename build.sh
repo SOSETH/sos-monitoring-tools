@@ -32,6 +32,8 @@ buildpkg check-iostat_0.0.5_all.deb check_iostat
 buildpkg check-sas-smart_0.1_amd64.deb check_sas_smart
 buildpkg check-power_0.1_amd64.deb check_power
 buildpkg check-mem_0.1-1_all.deb check_mem
+buildpkg check-ceph-dash_0.1_amd64.deb check_ceph_dash
+buildpkg ceph-dash_0.1_all.deb ceph-dash
 
 # C++
 buildpkg check-ib_0.1_amd64.deb check_ib

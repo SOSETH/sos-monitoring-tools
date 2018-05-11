@@ -40,3 +40,9 @@
 [submodule "graphite_exporter"]
 	path = graphite_exporter
 	url = git@github.com:SOSETH/graphite_exporter.git
+[submodule "check_ceph_dash"]
+	path = check_ceph_dash
+	url = git@github.com:SOSETH/check_ceph_dash.git
+[submodule "ceph-dash"]
+	path = ceph-dash
+	url = git@github.com:SOSETH/ceph-dash.git
