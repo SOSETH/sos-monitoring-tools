@@ -46,3 +46,6 @@
 [submodule "ceph-dash"]
 	path = ceph-dash
 	url = git@github.com:SOSETH/ceph-dash.git
+[submodule "ceph_exporter"]
+	path = ceph_exporter
+	url = git@github.com:SOSETH/ceph_exporter.git

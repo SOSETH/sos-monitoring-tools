@@ -67,5 +67,6 @@ if [ "${DIST}" != "jessie" ] ; then
 
     buildpkg check-ceph_0.1_amd64.deb check-ceph
     buildpkg prometheus-graphite-exporter_0.2.0-d950808_amd64.deb graphite_exporter
+    buildpkg ceph-exporter_2.0.0+git20171216.16c9efb-1_amd64.deb ceph_exporter
 fi
 # vim: set ts=4 sw=4 tw=0 et :

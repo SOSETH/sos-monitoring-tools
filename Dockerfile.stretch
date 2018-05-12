@@ -30,7 +30,10 @@ RUN apt update && \
     cmake \
     libaliased-perl \
     libmodule-pluggable-perl \
-    libseccomp-dev
+    libseccomp-dev \
+    dh-systemd \
+    golang-github-prometheus-client-golang-dev \
+    librados-dev
 
 RUN echo "deb http://ftp.debian.org/debian stretch-backports main" > /etc/apt/sources.list.d/backports.list && \
   apt update && \
