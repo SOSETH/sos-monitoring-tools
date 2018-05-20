@@ -4,3 +4,4 @@ out
 ceph
 *.changes
 *.buildinfo
+mibs/

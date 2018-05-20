@@ -1,0 +1,30 @@
+FROM uubk/debuild:stretch
+
+ARG LUID=1000
+RUN apt update && \
+  apt upgrade -y && \
+  apt install -y golang-go \
+    golang-any \
+    dh-golang \
+    dh-systemd \
+    golang-github-prometheus-client-golang-dev \
+    libsnmp-dev
+
+RUN echo "deb http://ftp.debian.org/debian stretch-backports main" > /etc/apt/sources.list.d/backports.list && \
+  apt update && \
+  apt install -t stretch-backports -y golang-1.10-go && \
+  mkdir -p /tmp/wd/gosrc/src/github.com/prometheus && \
+  mkdir -p /root/.snmp/mibs
+
+COPY mibs.sh /tmp/wd
+COPY mibs /root/.snmp/mibs
+COPY snmp_exporter /tmp/wd/gosrc/src/github.com/prometheus/snmp_exporter
+COPY generator.yml /tmp/wd
+WORKDIR /tmp/wd
+RUN ./mibs.sh && \
+  mv /tmp/wd/snmp.yml / && \
+  chown -R ${LUID} /snmp.yml && \
+  rm -Rf /tmp/wd
+
+ENTRYPOINT ["/bin/cp"]
+CMD ["/snmp.yml", "/data/"]

@@ -4,6 +4,9 @@ jessie:
 stretch:
 	./dbuild.sh stretch
 
+snmp.yml:
+	./mbuild.sh
+
 clean:
 	rm -Rf out out-* *.changes *.buildinfo
 
@@ -14,3 +17,4 @@ dist-clean:
 
 all:	jessie
 all:	stretch
+all:	snmp.yml
