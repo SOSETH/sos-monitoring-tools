@@ -49,3 +49,6 @@
 [submodule "ceph_exporter"]
 	path = ceph_exporter
 	url = git@github.com:SOSETH/ceph_exporter.git
+[submodule "snmp_exporter"]
+	path = snmp_exporter
+	url = git@github.com:SOSETH/snmp_exporter.git

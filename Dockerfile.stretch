@@ -33,7 +33,8 @@ RUN apt update && \
     libseccomp-dev \
     dh-systemd \
     golang-github-prometheus-client-golang-dev \
-    librados-dev
+    librados-dev \
+    libsnmp-dev
 
 RUN echo "deb http://ftp.debian.org/debian stretch-backports main" > /etc/apt/sources.list.d/backports.list && \
   apt update && \
