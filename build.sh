@@ -29,7 +29,7 @@ buildpkg check-apcupsd_2.6-1_all.deb check_apcupsd
 buildpkg check-iostat_0.0.5_all.deb check_iostat
 
 # Python
-buildpkg check-sas-smart_0.1_amd64.deb check_sas_smart
+buildpkg check-sas-smart_0.2_amd64.deb check_sas_smart
 buildpkg check-power_0.1_amd64.deb check_power
 buildpkg check-mem_0.1-1_all.deb check_mem
 buildpkg check-ceph-dash_0.1_amd64.deb check_ceph_dash
@@ -47,6 +47,7 @@ buildpkg check-lm-sensors_4.4.1-36e453f-1_all.deb check_lm_sensors
 buildpkg check-raid_4.0.8-1_all.deb check_raid
 buildpkg check-snmp-int_1.24-1_all.deb check_snmp_int
 buildpkg check-smartvalues_0.4-1.1_all.deb check_smartvalues
+buildpkg check-lsi-raid_2.5-0495085-1_all.deb check_lsi_raid
 
 # Golang
 if [ "${DIST}" != "jessie" ] ; then

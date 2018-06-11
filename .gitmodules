@@ -52,3 +52,6 @@
 [submodule "snmp_exporter"]
 	path = snmp_exporter
 	url = git@github.com:SOSETH/snmp_exporter.git
+[submodule "check_lsi_raid"]
+	path = check_lsi_raid
+	url = git@github.com:SOSETH/check_lsi_raid.git
