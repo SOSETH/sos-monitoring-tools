@@ -7,7 +7,7 @@ if [ ! -d out ] ; then
 fi
 
 if [ -z "${BUILD_GOLANG_VERSION}" ] ; then
-    export BUILD_GOLANG_VERSION=1.10
+    export BUILD_GOLANG_VERSION=1.11
 fi
 
 set -e

@@ -38,7 +38,7 @@ RUN apt update && \
 
 RUN echo "deb http://ftp.debian.org/debian stretch-backports main" > /etc/apt/sources.list.d/backports.list && \
   apt update && \
-  apt install -t stretch-backports -y golang-1.10-go
+  apt install -t stretch-backports -y golang
 
 COPY . /tmp/wd
 WORKDIR /tmp/wd
