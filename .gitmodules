@@ -40,15 +40,6 @@
 [submodule "graphite_exporter"]
 	path = graphite_exporter
 	url = git@github.com:SOSETH/graphite_exporter.git
-[submodule "check_ceph_dash"]
-	path = check_ceph_dash
-	url = git@github.com:SOSETH/check_ceph_dash.git
-[submodule "ceph-dash"]
-	path = ceph-dash
-	url = git@github.com:SOSETH/ceph-dash.git
-[submodule "ceph_exporter"]
-	path = ceph_exporter
-	url = git@github.com:SOSETH/ceph_exporter.git
 [submodule "snmp_exporter"]
 	path = snmp_exporter
 	url = git@github.com:SOSETH/snmp_exporter.git
