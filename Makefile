@@ -13,7 +13,6 @@ clean:
 dist-clean:
 	./srcclean.sh check_lm_sensors
 	./srcclean.sh check_raid
-	./srcclean.sh ceph-dash
 
 all:	jessie
 all:	stretch

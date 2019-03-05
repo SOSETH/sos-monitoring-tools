@@ -32,8 +32,6 @@ buildpkg check-iostat_0.0.5_all.deb check_iostat
 buildpkg check-sas-smart_0.2_amd64.deb check_sas_smart
 buildpkg check-power_0.1_amd64.deb check_power
 buildpkg check-mem_0.1-1_all.deb check_mem
-buildpkg check-ceph-dash_0.1_amd64.deb check_ceph_dash
-buildpkg ceph-dash_0.1_all.deb ceph-dash
 
 # C++
 buildpkg check-ib_0.1_amd64.deb check_ib
@@ -66,7 +64,6 @@ if [ "${DIST}" != "jessie" ] ; then
 
     buildpkg check-ceph_0.1_amd64.deb check-ceph
     buildpkg prometheus-graphite-exporter_0.2.0-d950808_amd64.deb graphite_exporter
-    buildpkg ceph-exporter_2.0.0+git20171216.16c9efb-1_amd64.deb ceph_exporter
     buildpkg prometheus-snmp-exporter_0.10.0-e7d1c92_amd64.deb snmp_exporter
 fi
 # vim: set ts=4 sw=4 tw=0 et :
