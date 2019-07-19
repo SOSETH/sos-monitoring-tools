@@ -1,0 +1,52 @@
+FROM soseth/debian-ci-base:buster
+
+ARG LUID=1000
+RUN apt update && \
+  apt upgrade -y && \
+  apt install -y golang-go \
+    golang-any \
+    dh-golang \
+    libibumad-dev \
+    libibnetdisc-dev \
+    libboost-all-dev \
+    libibmad-dev \
+    libopensm-dev \
+    libyaml-cpp-dev \
+    perl \
+    libmodule-install-perl \
+    libmonitoring-plugin-perl \
+    python3-pysnmp4 \
+    python3 \
+    libextutils-makemaker-cpanfile-perl \
+    libmonitoring-plugin-perl \
+    libswitch-perl \
+    libjson-xs-perl \
+    libtext-trim-perl \
+    libtry-tiny-perl \
+    libexception-class-perl \
+    libnet-snmp-perl \
+    python3-setuptools \
+    python3-venv \
+    cmake \
+    libaliased-perl \
+    libmodule-pluggable-perl \
+    libseccomp-dev \
+    dh-systemd \
+    golang-github-prometheus-client-golang-dev \
+    librados-dev \
+    libsnmp-dev \
+    golang
+
+#RUN echo "deb http://ftp.debian.org/debian buster-backports main" > /etc/apt/sources.list.d/backports.list && \
+#  apt update && \
+#  apt install -t buster-backports -y golang
+
+COPY . /tmp/wd
+WORKDIR /tmp/wd
+RUN ./build.sh buster && \
+  chown -R ${LUID} /tmp/wd/out && \
+  tar -C /tmp/wd/out -cvf /pkg.tar . && \
+  rm -Rf /tmp/wd
+
+ENTRYPOINT ["/bin/tar"]
+CMD ["-xvf", "/pkg.tar", "-C", "/data"]

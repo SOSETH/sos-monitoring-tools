@@ -1,8 +1,8 @@
-jessie:
-	./dbuild.sh jessie
-
 stretch:
 	./dbuild.sh stretch
+
+buster:
+	./dbuild.sh buster
 
 snmp.yml:
 	./mbuild.sh
@@ -14,6 +14,6 @@ dist-clean:
 	./srcclean.sh check_lm_sensors
 	./srcclean.sh check_raid
 
-all:	jessie
 all:	stretch
+all:	buster
 all:	snmp.yml

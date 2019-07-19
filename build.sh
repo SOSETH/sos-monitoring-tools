@@ -34,10 +34,10 @@ buildpkg check-power_0.1_amd64.deb check_power
 buildpkg check-mem_0.1-1_all.deb check_mem
 
 # C++
-buildpkg check-ib_0.1_amd64.deb check_ib
-if [ "${DIST}" != "jessie" ] ; then
-    buildpkg tcpdup_0.1+nmu1_amd64.deb tcpdup
-fi
+#buildpkg check-ib_0.1_amd64.deb check_ib
+#if [ "${DIST}" != "jessie" ] ; then
+#    buildpkg tcpdup_0.1+nmu1_amd64.deb tcpdup
+#fi
 
 # Perl
 buildpkg check-ipmi-sensor_3.12-1_all.deb check_ipmi_sensor_v3
