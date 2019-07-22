@@ -13,7 +13,7 @@ fi
 set -e
 
 function buildpkg {
-    if [ ! -f "out/${1}" ] ; then
+    if [ ! -f out/${1} ] ; then
         cd "${2}"
         dpkg-buildpackage -b -us -uc
         cd ..
@@ -25,27 +25,25 @@ echo "Building SOS monitoring tools on $(uname -a)"
 echo "Target: $(cat /etc/os-release)"
 
 # Shell
-buildpkg check-apcupsd_2.6-1_all.deb check_apcupsd
-buildpkg check-iostat_0.0.5_all.deb check_iostat
+buildpkg check-apcupsd_*.deb check_apcupsd
+buildpkg check-iostat_*.deb check_iostat
 
 # Python
-buildpkg check-sas-smart_0.2_amd64.deb check_sas_smart
-buildpkg check-power_0.1_amd64.deb check_power
-buildpkg check-mem_0.1-1_all.deb check_mem
+buildpkg check-sas-smart_*.deb check_sas_smart
+buildpkg check-power_*.deb check_power
+buildpkg check-mem_*.deb check_mem
 
 # C++
-#buildpkg check-ib_0.1_amd64.deb check_ib
-#if [ "${DIST}" != "jessie" ] ; then
-#    buildpkg tcpdup_0.1+nmu1_amd64.deb tcpdup
-#fi
+buildpkg check-ib_*.deb check_ib
+buildpkg tcpdup_*.deb tcpdup
 
 # Perl
-buildpkg check-ipmi-sensor_3.12-1_all.deb check_ipmi_sensor_v3
-buildpkg check-lm-sensors_4.4.1-36e453f-1_all.deb check_lm_sensors
-buildpkg check-raid_4.0.8-1_all.deb check_raid
-buildpkg check-snmp-int_1.24-1_all.deb check_snmp_int
-buildpkg check-smartvalues_0.4-1.1_all.deb check_smartvalues
-buildpkg check-lsi-raid_2.5-0495085-1_all.deb check_lsi_raid
+buildpkg check-ipmi-sensor_*.deb check_ipmi_sensor_v3
+buildpkg check-lm-sensors_*.deb check_lm_sensors
+buildpkg check-raid_*.deb check_raid
+buildpkg check-snmp-int_*.deb check_snmp_int
+buildpkg check-smartvalues_*.deb check_smartvalues
+buildpkg check-lsi-raid_*.deb check_lsi_raid
 
 # Golang
 # To prevent issues with user-supplied go environments (aka go version != 1.7
@@ -61,7 +59,7 @@ fi
 
 go version
 
-buildpkg check-ceph_0.1_amd64.deb check-ceph
-buildpkg prometheus-graphite-exporter_0.2.0-d950808_amd64.deb graphite_exporter
-buildpkg prometheus-snmp-exporter_0.10.0-e7d1c92_amd64.deb snmp_exporter
+buildpkg check-ceph_*.deb check-ceph
+buildpkg prometheus-graphite-exporter_*.deb graphite_exporter
+buildpkg prometheus-snmp-exporter_*.deb snmp_exporter
 # vim: set ts=4 sw=4 tw=0 et :
