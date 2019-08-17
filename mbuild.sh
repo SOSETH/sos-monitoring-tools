@@ -27,7 +27,7 @@ wget -c https://dl.ubnt.com/firmwares/airos-ubnt-mib/ubnt-mib.zip
 tar -xvf cisco.tar.gz
 unzip syno.zip
 unzip ubnt-mib.zip
-mv Synology_MIB_File_20170410/* .
+mv Synology_MIB_File/* .
 mv auto/mibs/v2/* .
 cd ..
 

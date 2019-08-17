@@ -7,7 +7,7 @@ if [ ! -d out ] ; then
 fi
 
 if [ -z "${BUILD_GOLANG_VERSION}" ] ; then
-    export BUILD_GOLANG_VERSION=1.10
+    export BUILD_GOLANG_VERSION=1.11
 fi
 
 set -e
@@ -20,8 +20,10 @@ export GOROOT="/usr/lib/go-${BUILD_GOLANG_VERSION}"
 export GOPATH="$(pwd)/gosrc"
 
 go version
-cd $GOPATH/src/github.com/prometheus/snmp_exporter
-make build
+go get github.com/prometheus/snmp_exporter/generator
+cd ${GOPATH}/src/github.com/prometheus/snmp_exporter/generator
+go build
+#make build
 cd /tmp/wd
 go build github.com/prometheus/snmp_exporter/generator
 go install github.com/prometheus/snmp_exporter/generator

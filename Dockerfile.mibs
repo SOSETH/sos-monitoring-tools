@@ -1,4 +1,4 @@
-FROM uubk/debuild:stretch
+FROM soseth/debian-ci-base:buster
 
 ARG LUID=1000
 RUN apt update && \
@@ -8,12 +8,10 @@ RUN apt update && \
     dh-golang \
     dh-systemd \
     golang-github-prometheus-client-golang-dev \
-    libsnmp-dev
+    libsnmp-dev \
+    golang-1.11-go
 
-RUN echo "deb http://ftp.debian.org/debian stretch-backports main" > /etc/apt/sources.list.d/backports.list && \
-  apt update && \
-  apt install -t stretch-backports -y golang-1.10-go && \
-  mkdir -p /tmp/wd/gosrc/src/github.com/prometheus && \
+RUN mkdir -p /tmp/wd/gosrc/src/github.com/prometheus && \
   mkdir -p /root/.snmp/mibs
 
 COPY mibs.sh /tmp/wd
